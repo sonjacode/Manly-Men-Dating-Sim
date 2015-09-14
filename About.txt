@@ -1,0 +1,18 @@
+Project: Manly Men Dating Simulator
+
+Main Character: Joseph Joestar
+
+Pairing Character List:
+  -John
+  -Teddy
+  -Dunk
+  -Jeff
+  -Conner
+  -Greg
+  -Lester
+  -Max
+  -Ian (Horse)
+
+Purpose: for the lulz
+
+Happy coding!
