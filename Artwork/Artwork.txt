@@ -1,0 +1,1 @@
+Folder where all the artwork for the sim will go.
