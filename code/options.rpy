@@ -163,6 +163,7 @@ init -1 python hide:
     ## Note that these only change the size of some of the text. Other
     ## buttons have their own styles.
 
+    style.menu_choice.color = "#DB2929"    #"#039478" <---- really nice teal color
 
     #########################################
     ## These settings let you change some of the sounds that are used by

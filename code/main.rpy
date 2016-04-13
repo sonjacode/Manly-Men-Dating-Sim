@@ -174,50 +174,57 @@ label sonja_advice:
 
     menu:
         "Greg" if t_greg == True:
-            son "Ah, Greg..."
+            son "Ah, Greg... he's an odd one. Really hates jews, really doesn't like himself. Really likes Awesomenauts though... and Jesus's crucifixion."
             jump sonja_advice
         "Teddy" if t_ted == True:
-            son"That guy... well, fuck. He's taken nigga."
+            son "NO! I mean just go as yourself, he already loves you."
             jump sonja_advice
         "Max" if t_max == True:
-            son"Max..."
+            son "Max... uh... you know, I don't know. You might have a chance with him. I hear he likes Warframe a lot, so hey, you can give it a shot."
             jump sonja_advice
         "John" if t_john == True:
-            son "Johnny boii!"
+            son "For John, all you need is penguins. Trust me."
+            son "You'll still regret it later."
             jump sonja_advice
         "Lester" if t_lest == True:
-            son "Lester is a boipussy."
+            son "Let me tell you a story. Lester was once playing top lane against this Riven, and they flirted all game."
+            son "Nothing would be more humiliating than to dress up as his one and only love!"
             jump sonja_advice
         "Dunk" if t_dunk == True:
-            son "Dunk is the man."
+            son "Dunk really loves Dunkmaster Darius and having his ego stroked. I know he'll be dressed as Papyrus even though that's completely irrelevant to this story because we wrote this before everybody's obsession with Undertale."
             jump sonja_advice
         "Jeff" if t_jeff == True:
-            son "Jeff!"
+            son "I would tell you not to get involved with Jeff, but... if you must... you know his love of Pepes."
+            son "If  you choose Jeff, I will make you the rarest Pepe of them all!"
             jump sonja_advice
         "Conner" if t_conner == True:
-            son "EMU MAAAYYNNNEEE!"
+            son "Conner is the sweetest and most non-violent emu-man you will ever meet in your life."
+            son "I would suggest dressing as his favorite: Team Spirit Anivia!"
             jump sonja_advice
         "Horse" if t_horse == True:
-            son "Horse is a bit trickier. You need to dress like Rambo."
+            son "Horse is a bit trickier. You need to dress like-"
+            jojo "Don't worry about Horse. I have a costume he gave me that he wants me to wear."
             jump sonja_advice
         "That's all I visited today.":
             jump costume_pick
 
 label costume_pick:
     
+    scene bg cellar with dissolve
     "After this, Sonja takes me back down to her cellar. A bunch of fabrics are strewn across a small table."
+    show sonja regular with easeinright
     son "Alright, JoJo. Now's the time for you to choose who you want to impress."
     son "So, knowing all of this, tell me- which costume would you like for me to make?"
 
     menu:
-        "Froggy G" if t_greg == True:
-            $ cos = "Froggy G"
+        "Dead Jesus" if t_greg == True:
+            $ cos = "Dead Jesus"
         "No Costume" if t_ted == True:
             $ cos = "no_cos"
         "Warframe-themed" if t_max == True:
             $ cos = "Warframe-themed"
-        "Garen" if t_john == True:
-            $ cos = "Garen"
+        "Penguin" if t_john == True:
+            $ cos = "Penguin"
         "Riven" if t_lest == True:
             $ cos = "Riven"
         "Dunkmaster Darius" if t_dunk == True:
@@ -235,12 +242,14 @@ label costume_pick:
         jojo "It sure will. I'll see you there."
         "The next night..."
     elif cos == "no_cos":
-        son "That's actually a good idea. See you there JoJo!"
+        son "You will look dashing as yourself. See you there JoJo!"
         "I tidy myself up and turn to leave."
         "The next night..."
     else:
         "She bustles off to gather materials for the [cos] costume."
-        "A while passes, and soon she's done. "
+        hide sonja with easeoutleft
+        "A while passes, and soon she's done."
+        show sonja regular with easeinleft
         son "It looks great on you! You'll be sure to seduce your chosen."
         jojo "Hopefully this works. See you there, Sonja."
         "The next night..."
@@ -248,6 +257,24 @@ label costume_pick:
     jump halloween
 
 label halloween:
+
+    scene mansion with dissolve
+    "I walk up the steps of Lester's mansion."
+    "I have a feeling it was the drug trade that paid for it, not his musical efforts."
+
+    scene inside mansion with dissolve
+    show lester hregular with zoomin
+    "Lester appears."
+    if cos == "Riven":
+        jump HalloweenLester
+
+    le "Welcome to the Halloween Party!"
+    le "I like your originality! Enjoy yourself and have a good time with the others."
+
+    hide lester with easeoutleft
+
+    "Like that's even possible. Great."
+    "I walk around a bit until I spot the trap I'm supposed to impress."
 
     if cos == "Froggy G":
         jump HalloweenGreg
@@ -257,8 +284,6 @@ label halloween:
         jump HalloweenMax
     elif cos == "Garen":
         jump HalloweenJohn
-    elif cos == "Riven":
-        jump HalloweenLester
     elif cos == "Dunky":
         jump HalloweenDunk
     elif cos == "Pepe":
@@ -273,14 +298,20 @@ label HalloweenDunk:
 
     $ period = "halldunk"
 
+    show dunk hregular with easeinright
     du "Joseph...Dunkmaster Darius? Really?"
     jojo "I thought it would fit you well."
+    show dunk hangry with dissolve
     du "Man you know Darius is 'balanced'!"
     du "Because you know, having more damage than a fed ADC is fair because he is also tanky..."
     jojo "Do you want me to go change?"
+    show dunk hregular with dissolve
     du "No. I know it might be confusing, but..."
+    show dunk hblush with dissolve
     du "I love unbalanced things."
+    show dunk hregular with dissolve
     du "As a child, my father left me alone on a seesaw with a sack of potatoes on the other end."
+    show dunk hsad with dissolve
     du "I was so afraid of heights, I stayed up there for a full 7 hours."
     du "The sack of potatoes... reduced in mass as my hunger increased."
     du "Balance nearly made me starve to death."
@@ -292,12 +323,15 @@ label HalloweenDunk:
     jojo "Do you need a hug?"
     du "I have needed one for 17 years JoJo."
     du "But I must stay strong..."
+    show dunk hregular with dissolve
     du "My pokemon need me!"
     jojo "It appears the need is mutual."
+    show dunk hangry with dissolve
     du "Shut up! There are water pokemon. I am just trying to catch them in my tears."
     du "So how is the whole Regi thing going?"
     jojo "I tried to kidnap him but he said he didn't have the power to change pokemon."
     jojo "I guess that makes sense, TSM never really did pokemon."
+    show dunk hregular with dissolve
     du "Wait, what?"
     jojo "You know, he used to be the mid laner for that League team."
     du "No... Joseph... no. Wrong Regi."
@@ -305,13 +339,20 @@ label HalloweenDunk:
     du "Please, release him. How else am I supposed to ironically cheer for TSM at worlds?"
     jojo "CLG beat them. Cheer for them."
     du "Where is the irony in that?"
-    jojo "Come on. They are CLG. "
+    jojo "Come on. They are CLG."
     jojo "You know they will only win their first game in every series."
     jojo "Give the fans hope."
     du "Fair point."
-    du "Now get to work on getting the right Regi!"  
+    show dunk hseductive with dissolve
+    du "Now get to work on getting the right Regi!"
+    hide dunk with easeoutright  
 
+    scene bg apothecary
+    with fade
     "I feel confused. I need someone's advice. I'll visit Sonja."
+    scene bg apothecary counter
+    with CropMove(3.0, "slideawayleft")
+    show sonja regular with easeinbottom
     son "Hey JoJo, what's wrong? You look down."
     jojo "I may have gotten myself involved with a psychopath."
     son "John?"
@@ -328,8 +369,11 @@ label HalloweenDunk:
     jojo "Hmm, that's a good point. Alright, I'll give it a try."
     jojo "Thanks Sonja, cya!"
     son "Goodbye JoJo!"
+    hide sonja easeoutleft
 
+    scene bg jojohome with fade
     "I can hear a knock on my door."
+    show dunk regular with dissolve
     jojo "Dunk! I wasn't expecting you to come here. How did you get my address?"
     du "My pokedex tells me where everything spawns."
     du "Listen, I found a way to capture Regi!"
@@ -339,14 +383,20 @@ label HalloweenDunk:
     du "I will go as myself with my Steel Team Six to dominate the competition!"
     du "You will crossdress as my lovely assistant, Maryl. I will build a pokemon team for you and..."
     jojo "Crossdress? Absolutely not. Joseph Joestar never does that!"
-    du "Have you never googled \"JoJo Tequila\"?"
+    du "Have you never googled {a=https://www.youtube.com/watch?v=SgWcSuxyvT8}\"JoJo Tequila\"{/a}?"
     jojo "I try to forget such moments."
     jojo "Still, I am going as myself. Lets do this."
     du "Fine...Deal."
-    "I realize immediately after hoping into Dunk's car that I should have brought my own music to listen to."
+    hide dunk with zoomout
+    scene dunkscar with fade
+    "I realize immediately after hopping into Dunk's car that I should have brought my own music to listen to."
     du "Gotta catch em all! Gotta catch em all! Pokemon!"
+    scene black with fade
     "3 hours later..."
+    scene dunkmatch with fade
+    show dunk regular with easeinright
     jojo "Okay Daniel. It's time for your first match."
+    show dunk sad with dissolve
     du "...yeah..."
     jojo "What's wrong?"
     du "You know how hearthstone now-a-days is just people playing the same 5 decks?"
@@ -355,44 +405,59 @@ label HalloweenDunk:
     jojo "Is it really that good?"
     du "I am nearly undefeated."
     jojo "Well, keep that record going. No one could ever match your skill!"
+    show dunk blush with dissolve
     du "You really think so?"
     jojo "Would you believe me if I said yes?"
     du "Less so after you say that, but if you pander to my ego enough, sure."
     jojo "Okay then yes."
     "A new challenger approaches!"
+    show dunk regular at left with dissolve
     du "The name is Dunksexuality. I am ready to battle!"
+    show dunk regular with dissolve
     "We begin whispering."
     jojo "I thought you were Daniel!"
     du "Huh? Oh, Dunk is just a screen name."
     jojo "Oh...Wait so you are sexually attracted to slam dunks?"
     du "Are you telling me that you don't get off to Space Jam?"
     jojo "Gotta be honest, never watched it."
+    show dunk angry with dissolve
     du "WHAT!? But... It's Space Jam?"
     jojo "Wait... There he is. Regi!"
+    show dunk blush with dissolve
     du "Oh my god... Is this what it feels like to be starstruck?"
     jojo "Focus on your game. I'll go do the deed."
+    hide dunk with easeoutright
+    show regi regular with easeinleft
     jojo "Hey Regi. The name is Joseph Joestar, but you can call me JoJo."
     jojo "Mind if I kidnap you?"
     regi "A little?"
     jojo "That's a shame. I have some political brainwashing to subject you to."
     "The fight goes on for a full 5 seconds before I win."
+    show regi scared
+    hide regi scared with moveoutright
     "Because I always win."
+    show dunk regular with easeinright
     jojo "Okay Dunk, I got the goods."
     jojo "You ready to split?"
+    show dunk angry
     du "Hang on. Just a second... This idiot thinks Hyper beam is a good move."
     jojo "He's 12, Dunk."
     du "Childhood is the time in life where the adults are supposed to tell you why your life choices are stupid."
     du "This idiot just happens to make it easy."
     jojo "Okay I might be a terrorist, but somehow I am judgemental of your morality."
     jojo "Lets get out of here."
-
+    scene dunkhouse with fade
+    show regi bound at left with easeinleft
     "We capture the Reginald and bring him to Dunk's house."
+    show dunk regular at right with easeinright
     du "Okay Joseph, we got him. What now?"
     jojo "I thought you had that part planned out!"
     du "I must admit, this is my first kidnapping."
     jojo "I thought pokemon would have taught you to make kidnapped creatures fall in love with you!"
     du "This is Regi Joseph. He's no creature, he's a god."
     jojo "That seems a bit dramatic. Okay... Let's see what I can do."
+    hide dunk with moveoutright
+    show regi bound at center with moveinleft
     jojo "Listen, Regi, I need you to do me a favor."
     regi "I will never break! The pride of Nintendo is with me in all my actions."
     jojo "Never break?"
@@ -418,38 +483,50 @@ label HalloweenDunk:
     jump end_credits
 
 label HalloweenHorse:
+    show horse hangry with easeinright
     ho "Damn it. I knew you'd come here like that, but it still pisses me off!"
     jojo "This is where all of the targets are."
+    show horse hregular with dissolve
     ho "You make a valid point. Here, take a drink."
     jojo "Oh thank god. I was waiting all day for something to drink."
+    show horse hangry
     ho "What? No. Don't drink that!"
     ho "That drink is poisoned."
     jojo "Normally someone would warn me of that BEFORE giving me the drink!"
+    show horse hregular with dissolve
     ho "True, but do I seem like a normal person to you?"
     jojo "Fair point. So what do I do with this?"
     ho "Everyone wants a gift from their crush."
     ho "When one of the weeaboos comes to flirt with you, give them that."
+    hide horse with easeoutleft
     "Wait, wasn't my goal to find love? Why am I killing the people flirting with me?"
+    show john hblush with easeinright
     john "Miku? Is that you? Am I... just seeing things?"
     john "Can I please have a lock of your hair?"
     "Actually, I really want to kill them."
     jojo "Sorry, I need this hair for my next concert."
     jojo "Want my drink though? I put my lips on it."
     john "Is that even a question?!?!?"
+    show john hregular
     john "Wait a second... This doesn't taste like a drink."
     john "This tastes like me dying."
     jojo "What does that even mean?"
+    show john dead with dissolve
     "The entire party breaks into a panic when it is clear John is dead."
     "I barely survive the stampede to get outside."
+    scene mansion with slideawayleft
     "Lester's house is forever ruined by the event."
     "But you know, he probably deserves it."
+    show horse hregular with easeinright
     ho "Hahaha! Well done friend."
     jojo "Dear god. I have never met someone who is less creepy dead than alive."
     ho "Such is the life of a weeaboo..."
+    show horse hsad with dissolve
     ho "It's a horrible disease. The people don't even know they are sick."
     jojo "I suppose so. So, that's 1 down."
     ho "Just 3 to go."
     jojo "I thought there were only 2 left."
+    show horse hregular with dissolve
     ho "Right...2..."
     ho "I keep forgetting I crossed you off the list."
     jojo "That seems like an important thing to remember."
@@ -466,10 +543,12 @@ label HalloweenHorse:
     ho "He just happens to attract weeaboos."
     jojo "Is he one?"
     ho "Nah. Can't be. He watches Teen Titans."
-    jojo "Fair point."  
+    jojo "Fair point."
 
+    scene concerthall with fade
     "I approach the concert. It's clear Lester went all out with this one."
-    "Conner is helping him out by doing the autotuning."
+    "Conner is helping him out by doing the lights."
+    scene upper rows with dissolve
     "I can see Dunk sitting on the upper row, playing pokemon on his DS."
     jojo "*under my breath* This doesn't seem difficult."
     "But while climbing the stairs, I find Teddy."
@@ -479,12 +558,14 @@ label HalloweenHorse:
     "He's even trained in martial arts."
     "This is no easy fight. This is a boss battle."
     "I have to strike in a way that would kill Teddy for sure without giving him a chance to react."
+    scene upper dunkonly with dissolve
     jump HorseTedKill
     return
 
 label HorseTedKill:
     menu:
         "Spoil the end of Madoka Magicka":
+            show teddy regular with fade
             jojo "Turns out at the end of Madoka Magicka..."
             te "Oh? That show? I already saw it. The ending was awesome huh? Remember when..."
             jojo "Wait, you already watched it?"
@@ -492,6 +573,7 @@ label HorseTedKill:
             jojo "Damn it!"
             jump HorseTedKill
         "Challenge him to an Osu battle with a broken tablet":
+            show teddy regular with fade
             jojo "Hey Teddy, fight me in Osu!"
             jojo "Queen - Having a good time"
             jojo "Easy mode..."
@@ -508,6 +590,7 @@ label HorseTedKill:
             jojo "Damn it!"
             jump HorseTedKill
         "Explain why RWBY is the best anime":
+            show teddy regular with fade
             jojo "Okay but real talk here:"
             jojo "RWBY has 4 different main characters from the get go!"
             jojo "Then they add more as they go."
@@ -518,10 +601,12 @@ label HorseTedKill:
             jojo "Subs? But... It's literally dubbed English!"
             te "The English dubs always suck. They censor out what the artists originally intended."
             jojo "The artists {i}wrote{/i} it in English!"
+            show teddy angry
             te "Pfft. You call those people {i}artists{/i}?"
             te "The true artists are the fans who dub it into Korean!"
             te "Followed by the lengthy negotiations with a group of bank robbers to convert it to Spanish."
             te "Then, a group of rebel programmers try to convert it to binary."
+            show teddy regular with dissolve
             te "The engineers then make it hexidecimal..."
             te "And then God himself decends to translate it into Japanese."
             te "And that gets subbed by a group of monkeys who learned the human language after years of research."
@@ -530,13 +615,18 @@ label HorseTedKill:
             "Okay he lost me half way through his monologue. I need another approach..."
             jump HorseTedKill
         "Just fucking stab him with a gun.":
+            show teddy regular with fade
             jojo "Hey Teddy!"
             te "JoJo! What's up with you?"
             "I pistol whip the weeaboo in the face."
             "It's fully loaded. I just really like hitting people."
             "Feels more personal."
+            show teddy dead with dissolve
             "Within hours, the Ted is Ded."
             "Now, all that stands in my way is Dunk."
+            hide teddy with zoomout
+            scene empty seats with dissolve
+            show dunk regular with dissolve
             jojo "Hey Dank Dan!"
             du "Hey JoJo? Wait... What's that in your hand?"
             jojo "It's a powerdrill."
@@ -545,6 +635,7 @@ label HorseTedKill:
             du "That is true."
             du "Wait... Something is different about that drill."
             jojo "I may have painted it a bit special."
+            show dunk blush with dissolve
             du "Oh my god!"
             du "Is that... Is that what I think it is?"
             jojo "It's the first piece in my cosplay set."
@@ -553,9 +644,11 @@ label HorseTedKill:
             du "Absolutely!"
             jojo "Okay, let me just pretend I am going to stab you in the head with this drill"
             du "Your drill is the drill that shall piece my heavens!"
+            show dunk dead with dissolve
             "I kill Dunk with little resistance."
             "His team of pokemon was never heard from again."
             "Mostly because he bled all over the DS and no one wanted it."
+            hide dunk with dissolve
             "Well that's everything. I better return to Horse."
     
             jump HorseFinale
@@ -564,11 +657,14 @@ label HorseFinale:
 
     $ period = "horseydorsey"
 
+    scene bg pastures with fade
+    show horse regular with easeinleft
     jojo "I did it. They are all dead."
     ho "I can tell. The skype group chat is finally free of anime images."
     jojo "So what do we do now?"
     "I saw Horse removing a pistol from his belt."
     "Yeah, horses wear belts. What's it to you anyways?"
+    show gun at center with dissolve
     ho "There is only one weeaboo left now."
     jojo "What? No! I helped you!"
     ho "Sure you did. But only to save yourself."
@@ -581,7 +677,7 @@ label HorseFinale:
     ho "Prove you aren't one of them. Otherwise..."
     "I hear Horse turning off the safety."
     jojo "Okay... Just give me a moment to think."
-    "My heart's sure beating fast... This is good. Lets finish this."
+    "My heart's sure beating fast... This is good. Let's finish this."
 
     menu:
         "Convince him the animes he watched just weren't good ones":
@@ -602,6 +698,7 @@ label HorseFinale:
     jump end_credits
 
 label HalloweenConner:
+    show conner regular with easeinright
     co "Joseph! What are you doing here?"
     jojo "Lester invited me. Do you like my costume?"
     co "It's great, but it seems like a bad idea to come here when you have a bomb in your chest."
@@ -610,21 +707,25 @@ label HalloweenConner:
     jojo "Social events like these...People deserve to see the JoJo in his full glory!"
     co "Okay fine. But what can I do to help keep your heartrate up?"
     jojo "Hmm, Sonja recommended finding love. Maybe you could flirt with me?"
+    show conner blush with dissolve
     co "...Flirt with you?"
     jojo "Yea. Boost my ego a bit."
     co "Huh...Okay lets see what I can do."
     co "Wow, you sure are good at AD Ekko JoJo. Where did you learn to play him that well?"
     jojo "Oh you know, Back to the Future, Bioshock Infinite, Life is Strange..."
     jojo "Time travel is just something I grew up with."
+    show conner regular with dissolve
     co "Did that help at all?"
     jojo "Sure did."
     co "Okay good..."
     co "Um..."
+    show conner blush with dissolve
     co "I really like your Zilean jungle? It pushes the meta to new heights."
     jojo "Why, thank you! I get told often that it pushes it to new depths, so hearing the opposite is great."
     jojo "It really is a jungler with a high skill cap."
     co "I just played Life is Strange and I loved it. Do you have any recommendations for good games?"
     jojo "You should buy God Will Be Watching."
+    show conner regular with dissolve
     co "Oh, that one's good?"
     jojo "No! But you can refund it for Hatred."
     co "Hatred? Huh..."
@@ -635,14 +736,19 @@ label HalloweenConner:
     co "Relax. I can do that more later. Anyways, lets get going."
     co "I like Lester, I want to keep his house un-exploded."
     jojo "Fair point. Alright, lets go."
-
+    hide conner with easeoutleft
+    scene bg apothecary
+    with CropMove(3.0, "slideawayleft")
     "I should get more advice from Sonja before I move on."
+    scene bg apothecary counter
+    with CropMove(2.0, "slideawayleft")
+    show sonja regular with easeinbottom
     son "How did the Halloween party go?"
     jojo "Pretty well... I think. It was a bit odd."
     son "How so?"
     jojo "I convinced a man to flirt with me."
     jojo "Surprisingly, I like anyone who can boost my ego."
-    son "So you found a love?"
+    son "So you found love?"
     jojo "He doesn't seem too interested in love."
     jojo "More so fixing the bomb problem."
     son "Fixing it?"
@@ -650,27 +756,33 @@ label HalloweenConner:
     son "Hmm... That sounds like something Conner would do."
     jojo "How'd you know who it was?"
     son "His personality is pretty unique."
+    show sonja blush with dissolve
     son "Treat him carefully Joseph."
     son "He's a bit fragile."
     jojo "I'm always a careful man!"
+    show sonja regular with dissolve
     "She shrugs."
     son "The planes you have flown would disagree."
     jojo "Fair point. Well, time for me to go."
     son "Good luck JoJo!"
 
-    "I meet Conner in an abandoned warhouse."
+    scene warehouse with fade
+    "I meet Conner in an abandoned warehouse."
     "Normally this is where a drug deal would go down."
     "Of course, I already know that."
     "I didn't get this far in life being nice to punks!"
     "No... I'm a thug at heart."
+    show conner regular with easeinright
     co "Oh, thank the Emu Gods you met me here Joseph."
     jojo "What is all of this about?"
     co "I've prepared this location to fix your... heart problems."
     jojo "Oh good. See, it gets really hard to sleep while making sure you keep your heart rate up."
     jojo "And the cocaine just doesn't feel the same anymore..."
+    show conner angry with dissolve
     co "Wait what?"
     jojo "Nothing!"
     jojo "So, fixing the bomb..."
+    show conner regular with dissolve
     co "Right. That problem..."
     co "It's alright Joseph, I can fix the bomb..."
     co "Using..."
@@ -682,28 +794,42 @@ label HalloweenConner:
     co "Like this!"
     "A full 15 seconds go by."
     jojo "You... You did nothing."
+    show conner sad with dissolve
     co "I kinda hoped the situation would solve itself."
+    show conner regular with dissolve
     co "Okay, here I go, this time for real..."
     "I can feel Conner focus all his energy into my heart."
+    scene black with fade
     "I always was able to tell what people were thinking."
     "I know everyone's next line, next thought, next plan, next hope."
     "I know exactly what is going through Conner's head."
+    scene australia with fade
     "He envisions his homeland, Australia..."
     "He remembers very clearly the day he became an Emu."
+    scene ice cream with fade
     "It was a difficult case. The Ice Cream bomber."
     "He was famous for... You know, bombing ice cream trucks? The name kinda says it all."
     "He was on his way home from work. He had just caught the perp."
     "But then... He heard the jingle."
+    scene kids with fade
     "At first, he thought he was just imagining it, but then he heard the kids scream \"Ice Cream\"!"
     "Quickly, he shouted for them to take cover."
     "None of them were hurt."
+    scene bomb with fade
+    show conner sad with dissolve
     "But it was far too late for him..."
     "I could see the horror on his face as he recalled the explosion."
     "It turned him into the emu he is today."
+    scene office with fade
+    show conner sad with dissolve
     "His boss fired him. His wife left him. His dog ran away. That's unrelated, but still sad."
     "The discrimination an emu faces in a modern world... How horrifying."
+    scene black with fade
+    show conner regular with dissolve
     "But finally... He finds me. The first person to accept him for who he is."
     "I can never betray that trust."
+    scene warehouse with dissolve
+    show conner regular with dissolve
     co "Okay... I think I did it."
     jojo "Really?"
     co "I'm not sure you want to test it, but it looks like it worked."
@@ -724,27 +850,37 @@ label HalloweenConner:
     jojo "I feel like I need to go. Goodbye Conner."
     co "Goodbye Joseph. I hope I can see you again."
 
+    scene bg jojohome with fade
     "The bomb problem is solved... but I feel so empty."
-    "I haven't even seduced anyone!"
+    "I haven't even seduced anyone!" with hpunch
     "I know I don't need to anymore but..."
-    "I'm not one to back down from a challenge!"
+    "I'm not one to back down from a challenge!" with vpunch
     "I'll ask Conner to go with me to the carnival."
     "And while he's there, I'll confess my feelings to him!"
+    scene carnival with fade
+    show conner regular with easeinright
     co "Joseph... Thank you for inviting me out here."
     jojo "Absolutely! I like spending time with you."
+    show conner blush with dissolve
     co "Joseph..."
     jojo "So, what would you like to do while we are here?"
+    show conner regular with dissolve
     co "Hmm... How about some games?"
     jojo "Do you want me to win you a prize?"
+    show conner blush with dissolve
     co "A gift from you Joseph? Oh, please! I'd love one!"
+    scene corkshooter with dissolve
+    show conner regular with dissolve
     jojo "How about this cork-shooting game?"
     "All the targets here are Evelynns?"
     "I like this place..."
+    show crowd behind conner with dissolve
     s1 "What? An Emu? At a carnival?"
     s2 "Oh god. I hate Emus..."
     s1 "I know right? And this is the ugliest one of them all!"
     s2 "It looks like he is crossed with a human!"
     s2 "Quick, cover the childrens' eyes. They don't deserve to see this horror."
+    show conner sad with dissolve
     "Its clear to see Conner is depressed now..."
     jojo "Hey, leave him alone! He just came here to have fun!"
     s1 "An Emu? Having fun at a carnival? Ha!"
@@ -757,6 +893,9 @@ label HalloweenConner:
     jojo "I know I don't need to. That doesn't change the fact that I want to."
     co "Joseph..."
     "But how do I go about taking them out without ruining the date?"
+    hide conner with easeoutright
+
+    $period = "emu"
 
     menu:
         "Break some knees":
@@ -771,6 +910,8 @@ label HalloweenConner:
         "Leave with Conner and don't start a conflict":
             $ end = "conner_bad"
             $ act = "ConnerD"
+
+    call events_run_period
 
     jump end_credits
 
@@ -801,7 +942,7 @@ label HalloweenJeff:
     jojo "That was..."
     jeff "Well it appears I am now single."
     jojo "Guess so... Maybe we can fix that."
-    jeff "I guess we will just have to see, huh?"   
+    jeff "I guess we will just have to see, huh?"
     jump War
     return
 

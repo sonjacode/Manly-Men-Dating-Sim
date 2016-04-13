@@ -16,8 +16,41 @@ image bg library = "library.jpg"
 image bg roof = "roof.jpg"
 image bg gym = "gym.jpg"
 image bg studio = "studio.jpg"
+image bg hallway = "hallway.jpg"
+image dark one = "darkoutside.jpg"
+image dark two = "darkoutside2.jpg"
+image mirror = "mirror.jpg"
+image mansion = "mansion.jpg"
+image inside mansion = "insidemansion.jpg"
+image bg jojohome = "jojohome.jpg"
+image dunkscar = "dunkscar.jpg"
+image dunkmatch = "dunkmatch.jpg"
+image dunkhouse = "dunkhouse.jpg"
+image jail = "jail.jpg"
+image concerthall = "concerthall.jpg"
+image upper rows = "upperrows.jpg"
+image upper dunkonly = "upperdunkonly.jpg"
+image empty seats = "concertseats.jpg"
+image warehouse = "warehouse.jpg"
+image australia = "australia.jpg"
+image ice cream = "icecream.jpg"
+image kids = "kids.jpg"
+image bomb = "bomb.jpg"
+image office = "office.jpg"
+image carnival = "carnival.jpg"
+image corkshooter = "cork.png"
+image street = "street.jpg"
 
 image gymsprite = "gymsprite.png"
+image gun = "gun.png"
+
+image regi regular = "regi.png"
+image regi scared = "regiscared.png"
+image regi bound = "regibound.png"
+image stranger one = "stranger1.png"
+image crowd = "crowd.png"
+image policeone = "police1.png"
+image policetwo = "police2.png"
 
 image sonja regular = "Sonja.png"
 image sonja angry = "SonjaAngry.png"
@@ -40,11 +73,14 @@ image lester angry = "LesterAngry.png"
 image lester blush = "LesterBlush.png"
 image lester sad = "LesterSad.png"
 image lester seductive = "LesterSeductive.png"
+image lester back = "LesterBack.png"
 image jeff regular = "Jeff.png"
 image jeff angry = "JeffAngry.png"
 image jeff blush = "JeffBlush.png"
 image jeff sad = "JeffSad.png"
 image jeff seductive = "JeffSeductive.png"
+image jeff coat = "JeffCoat.png"
+image jeff coat pepe = "JeffCoatPepe.png"
 image conner regular = "Conner.png"
 image conner angry = "ConnerAngry.png"
 image conner blush = "ConnerBlush.png"
@@ -75,6 +111,46 @@ image jack angry = "JackAngry.png"
 image jack blush = "JackBlush.png"
 image jack sad = "JackSad.png"
 image jack seductive = "JackSeductive.png"
+
+image greg hregular = "HGreg.png"
+image greg hangry = "HGregAngry.png"
+image greg hblush = "HGregBlush.png"
+image greg hsad = "HGregSad.png"
+image greg hseductive = "HGregSeductive.png"
+image horse hregular = "HHorse.png"
+image horse hangry = "HHorseAngry.png"
+image horse hblush = "HHorseBlush.png"
+image horse hsad = "HHorseSad.png"
+image horse hseductive = "HHorseSeductive.png"
+image john hregular = "HJohn.png"
+image john hangry = "HJohnAngry.png"
+image john hblush = "HJohnBlush.png"
+image john hsad = "HJohnSad.png"
+image john hseductive = "HJohnSeductive.png"
+image dunk hregular = "HDunk.png"
+image dunk hangry = "HDunkAngry.png"
+image dunk hblush = "HDunkBlush.png"
+image dunk hsad = "HDunkSad.png"
+image dunk hseductive = "HDunkSeductive.png"
+image lester hregular = "HLester.png"
+image lester hangry = "HLesterAngry.png"
+image lester hblush = "HLesterBlush.png"
+image lester hsad = "HLesterSad.png"
+image lester hseductive = "HLesterSeductive.png"
+image lester hback = "HLesterBack.png"
+
+image john dead = "johndead.png"
+image maxwell dead = "maxdead.png"
+image lester dead = "lesterdead.png"
+image horse dead = "horsedead.png"
+image teddy dead = "teddead.png"
+image dunk dead = "dunkdead.png"
+image greg dead = "gregdead.png"
+image jeff dead = "jeffdead.png"
+image conner dead = "connerdead.png"
+image sonja dead = "sonjadead.png"
+image regi dead = "regidead.png"
+image bloodscreen = "bloodscreen.png"
 
 # Some characters that are used in events in the game.
 init:
@@ -274,7 +350,7 @@ label aquarium:
     jeff "If you would help me... expand my collection, I could reward you."
     jojo "What kind of reward?"
     show jeff seductive with dissolve
-    jeff "Have you ever googled guides on how to fuck dolphins?"
+    jeff "Have you ever googled guides on how to {a=http://www.insolitology.com/guides/fuckdolphin.htm}fuck dolphins{/a}?"
     jojo "What are you, my search history? You judgemental motherfucker..."
     show jeff regular
     jeff "Oh...That was a rhetorical question."
@@ -410,14 +486,14 @@ label library:
     "And that's when I see him..."
     jojo "Hello? Who are you?"
     show teddy regular with dissolve
-    te "Oh...Oh my god!"
-    te "Are you...Are you the REAL Joseph Joestar?"
+    te "Oh... Oh my god!"
+    te "Are you... are you the REAL Joseph Joestar?"
     te "I loved your plotline so much!"
     te "Notably, the parts where all your friends died. Remember that?"
     jojo "Okay seriously? Dick move..."
     te "Sorry, sorry. You're right."
-    te "Noteably, I am a bit starstruck, you know?"
-    te "Afterall, I thought you were fictional."
+    te "Notably, I am a bit starstruck, you know?"
+    te "After all, I thought you were fictional."
     jojo "Fictional? Hell no! I am the realest thug there is!"
     te "Oh my god! I can finally say I have a body pillow of someone real!"
     jojo "You have a body pillow of me?"
@@ -454,7 +530,7 @@ label library:
     te "Can I have a fruit roll-up please?"
     "Teddy hangs up."
     te "Sorry, I need to go. Goodbye Joseph!"
-    hide teddy with zoomout
+    hide teddy with easeoutright
     jojo "Get...Cultured?"
 
     "Oh, what the hell. It could have been worse..."
@@ -501,7 +577,7 @@ label roof:
     ma "It's less of an insult than usual. Take it as you may."
     jojo "Okay. Just get over here. Let's talk plans."
     jojo "If my heart drops below a certain rate, I will explode."
-    ma "And here I thought walking towards you got me AWAY from death."
+    ma "And here I thought walking towards you got me away from death."
     jojo "Sorry. Listen, I need some way to keep my heartrate up until I get to my objective."
     jojo "My friend Sonja recommended falling in love. Do you know anyone single?"
     show maxwell angry with dissolve
@@ -674,28 +750,36 @@ label gym:
 
 label studio:
 
+    scene bg studio with dissolve
     "You know, they really let you walk into a music studio easily these days."
+    show lester back with dissolve
     le "No no no... damn it. None of these lyrics will do."
     jojo "Hey... you?" #OUT THERE IN THE COLD GETTING LONELY GETTING OLD CAN YA FEEEEL ME
+    show lester angry
     le "Please. I am an artist trying to make a living. May I please have some alone time?"
     jojo "Okay I was going to leave but now I just don't like you. I mean, need help?"
     le "Oh please. What would someone like {i}you{/i} know about writing music?"
     jojo "I listen to Isis music to fall asleep. It soothes me."
+    show lester regular with dissolve
     le "Huh... a splash of culture never hurt a masterpiece..."
     le "Maybe you could help me write. I am trying to find a phrase to rhyme with 'I feel broken, a bird without a nest'."
     jojo "Okay that's cool and all I HAVE A FUCKING BOMB IN MY CHEST!"
+    show lester blush with dissolve
     le "Brilliant! Vulgar, but brilliant."
     jojo "No that wasn't a... whatever."
     le "I feel like my writer's block is gone! Thank you... who are you again?"
     jojo "My name is Joseph Joestar, king of all that which is Hamon!"
-    le "That... I'm just writting JoJo."
+    show lester regular with dissolve
+    le "That... I'm just writing JoJo."
     jojo "...fine."
     le "Well since you helped me so much with that, maybe you could help me with my next problem."
     jojo "And that is?"
     le "I am a musician, but I cannot sing."
+    show lester sad with dissolve
     le "I write beautiful lyrics, but when I try to sing them aloud..."
     le "Let's just say that I write songs without lyrics."
     jojo "Singing skill? I... huh. I've never tried singing."
+    show lester regular with dissolve
     le "Have you never showered?"
     jojo "I thought that was just a TV thing. People actually do that?"
     le "There is a reason I am banned from public showers."
@@ -704,22 +788,29 @@ label studio:
     jojo "I would have problems if you did it clothed."
     le "So is that a no?"
     jojo "Will you have sex with me if I say yes?"
+    show lester blush with dissolve
     "Lester gets shifty and uncomfortable."
     le "Uh... that is just... *laughs high-pitchedly* what the hell kind of question is that?"
     jojo "A rhetorical one. I know you will."
+    show lester angry with dissolve
     le "No. I seriously won't."
     jojo "I'll let you coach my singing naked."
+    show lester seductive with dissolve
     le "Sold. Without hesitation."
     le "So... that's all my problems solved."
     jojo "Cool. Want to hear about why Zilean is the best jungler?"
+    show lester regular with dissolve
     le "No, but I'm sure security would."
     jojo "That tone seems dishonest. I bet they don't even play league."
+    show lester angry
     le "No. They don't. Get the hell out of my studio."
     jojo "I will leave the studio but never your heart!"
     le "Freaking weirdo..."
     le "But..."
+    show lester blush with dissolve
     le "He's not wrong."
-
+    show lester back with dissolve
+    scene bg hallway with dissolve
     "That went better than I expected. I may be closer to getting this bomb to where it needs to be than I ever was."
     "I shrug."
     "Life is strange."
@@ -728,13 +819,20 @@ label studio:
 
 label visit:
 
+    scene dark one with CropMove(2.0, "slideawayleft")
     "It's getting late, and I should probably head back to the apothecary to tell Sonja of my adventures."
+    scene dark two with CropMove(2.0, "slideawayleft")
     "I have no idea what to make of most of these people, so I'll ask Sonja for advice."
     "Let's hope it goes well."
 
+    scene bg apothecary
+    with CropMove(3.0, "slideawayleft")
     "I walk into the apothecary again. The tiny bell at the door rings."
+    scene bg apothecary counter
+    with CropMove(2.0, "slideawayleft")
     "The apothecary is empty as she's closing up for the night."
     "I see her stooped behind the counter again, probably organizing bags of cocaine in disarray."
+    show sonja regular with easeinbottom
     son "*hears the bell* Oh hey JoJo! How's that whole bomb thing going?"
     jojo "It's... certainly going."
     jojo "I have met some of the... people... that you talked about..."
@@ -755,13 +853,15 @@ label DunkA:
     jojo "Are you ready to talk now?"
     jojo "He..Hello?"
     jojo "Regi?"
+    hide regi dead with fade
     "Regi had not survived."
     jojo "Oh shit! What do we do now?"
+    show dunk angry with easeinright
     du "You have committed deicide Joseph..."
     du "I can't let you live."
     du "Knife-mon, I choose you!"
     jojo "NO! If you kill me, we will both die! There is a bomb in my chest!"
-    du "My god is dead JoJo. Do you really think death is something I fear?"
+    du "My god is dead JoJo. Do you really think death is something I fear?" with hpunch
 
     return  
 
@@ -772,6 +872,8 @@ label DunkB:
     regi "Please, I'll do anything. Just don't hurt me."
     jojo "That was surprisingly easy for someone who won't break."
     regi "What do you want me to do?"
+    show regi bound at left with moveoutleft
+    show dunk regular at right with moveinright
     du "Buff Steel type pokemon."
     regi "What? That's crazy! They are perfectly fine as they are!"
     jojo "I haven't put the cables down yet."
@@ -782,21 +884,28 @@ label DunkB:
     regi "Okay! I'll do it."
     du "Also...Can I get your autograph? And a bit of your hair?"
     regi "Fine. Who should I make it out to?"
+    show dunk angry
     du "WHO THE HELL DO YOU THINK I AM?"
     du "My name is Daniel, but you may better know me as The Great DunkSexuality, god of all that is steel!"
     regi "No. I have never heard of that."
     du "Well... Shut up! Get out of here!"
+    hide regi with moveoutleft
     "Regi ran away!"
     jojo "Wow... We did it."
+    show dunk regular at center with easeinright
     du "We sure did JoJo. And with limited puns!"
     jojo "Regigigath."
     du "Damn it JoJo!"
     jojo "Sorry man."
+    show dunk seductive with dissolve
     du "Well... I must admit JoJo... I sure have fallen for you now."
     jojo "Really? Well... Shall we go... STEEL the deal?"
     du "Absolutely. Anything for you."
-    "The police walk into the room."
+    "The police walk into the room." #THIS IS THE POLICE!!!
+    show policeone behind dunk at right with easeinright
+    show policetwo behind dunk at left with easeinleft
     jojo "You know, we really should stop giving our names out in pride."
+    scene jail with fade
     "Me and Dunk were both arrested, forever locked away from each other."
     "I bet you think this is the bad ending, don't you?"
     "My target was the police station."
@@ -806,19 +915,24 @@ label DunkB:
 
 label HorseA2:
     jojo "Horse... I..."
-    "Horse immediately pulls the trigger."
+    show bloodscreen with dissolve
+    "Horse immediately pulls the trigger." with hpunch
     "The bullet barely misses my brain, but the bleeding is absolutely lethal."
     "I have just enough time to warn Horse!"
     jojo "Horse, run!"
+    show horse angry behind bloodscreen, gun with dissolve
     ho "What? You are telling ME to flee? I think it is you who should worry about fight or flight."
     jojo "There is a bomb wired to my heart. If you stay here, once I die, you will go with me."
     jojo "Run as far away as you can!"
+    show horse regular behind bloodscreen, gun with dissolve
     ho "Why are you telling me this?"
     jojo "Someone needs to survive to fight off the weeaboos."
     jojo "The Otaku horde grows by the day as more and more people go to hulu."
     jojo "You are the only one brave enough to stop them."
     jojo "Live on, for me! For all of us!"
     jojo "America must live on."
+    hide gun
+    hide horse with moveoutleft
     "As Horse runs, I feel my life fading."
     "I have failed my mission. There is no doubt about that."
     "But Horse... he still has his mission to complete."
@@ -830,20 +944,24 @@ label HorseB2:
     jojo "Magical Journey is the best utility spell in the game."
     jojo "Sure, Thresh can get his ADC in and out of danger with his lantern."
     jojo "But Bard's can help mulitple allies, even bait enemies!"
+    hide gun
     "Horse lowers the gun."
     jojo "And caretaker's shrine..."
     jojo "Sure it takes some setting up, but for a heal, it is one of the strongest in the earlygame."
     jojo "And his Q... It CC's for as long as Morgana's Q, but it can hit 2 targets AND stuns instead of snaring."
     jojo "And that ult... Many thought it was situational, but the skill cap on it is so amazingly high that it creates such big Reddit plays."
     jojo "That passive also lets him scale even while building supportive."
+    show horse sad with dissolve
     ho "JoJo... I... I don't know what to say."
     ho "I'm sorry for distrusting you."
     ho "It is clear you are even more American than me."
     ho "Please... What can I do to make it up to you?"
     jojo "How about a date?"
+    show horse regular with dissolve
     ho "Well..."
     ho "Okay. For you."
     ho "Because... I can say this confidently."
+    show horse seductive with dissolve
     ho "I love you JoJo."
     jojo "I love you too, random horse from the pasture."
     return
@@ -857,16 +975,20 @@ label ConnerA:
     "Then aim for the knee of the other..."
     s1 "OH GOD!"
     s2 "Quick, lets get out of here! This guy is crazy!"
+    hide crowd with moveoutleft
     jojo "We can go Conner. They won't come after us."
+    show conner sad with easeinright
     co "Joseph... no. I... no."
     co "I'm sorry. I'm not a fan of violence."
     co "I... I need to go."
     co "I'm sorry!"
+    hide conner with moveoutleft
     jojo "Conner! Wait!"
     "It's too late. He's already gone."
     "I can hear them coming. They aren't gone yet."
     s1 "Quick, stab him!"
     "I don't have the will to fight anymore..."
+    show bloodscreen with dissolve
     "I can feel the knife in my neck. This is the end."
     return
 
@@ -881,15 +1003,19 @@ label ConnerB:
     s1 "..."
     s2 "It's not worth it honey. Lets get out of here."
     s1 "Okay, you're right."
+    hide crowd with dissolve
+    show conner regular with easeinright
     co "Joseph... No one has ever stood up for me like that before."
     co "I... I really don't know what to say."
     jojo "I do."
     jojo "Conner, I love you."
     co "Joseph!"
     co "..."
+    show conner blush with dissolve
     co "I love you too."
     jojo "I don't have a lot of time before my mission comes to a close."
     jojo "So I must ask... What would it take to seduce you?"
+    show conner seductive with dissolve
     co "If you wanted to get into my pants, you just had to ask!"
     return
 
@@ -905,17 +1031,21 @@ label ConnerC:
     return
 
 label ConnerD:
+    scene street with dissolve
     "We just need to get away from here..."
     "But... They just keep following!"
     "I keep running and running! Why are they still here?!?!?"
     "Okay... After sprinting for 5 minutes, I think I finally lost them."
+    show conner regular with moveinright 
     "But... I just can't flirt with him in this atmosphere."
     "I keep looking over my shoulder expecting to see them again."
     "This paranoia... It's distracting."
+    show conner sad with dissolve
     co "Sorry Joseph, it's time for me to go. Thanks for taking me out here. It was entertaining."
     jojo "Wait, don't leave yet! I have something to tell you!"
     co "I'm sorry JoJo. I really need to go. I don't feel safe here."
     jojo "Conner..."
+    hide conner with moveoutleft
     "I didn't even get to tell him my feelings."
     "Well... I suppose I can't get distracted on this for too long."
     "I still have a building to \"resolve\"."
@@ -923,6 +1053,11 @@ label ConnerD:
     "It sounds like a car. Who brings one of those to the carnival?"
     s1 "There he is! Hit him!"
     "Wait, what? A hit and run?!? That's my job!"
+    "These fuckers will pay..."
+    show bloodscreen with dissolve
+    "I stab myself and run into them. Even if Conner never knew how I felt about him, he won't die in vain."
+    show crowd with zoomin
+    "I'll see you in Emu heaven, Conner..."
     return
 
 label MaxA:
